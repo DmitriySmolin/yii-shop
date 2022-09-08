@@ -16,4 +16,9 @@ class Product extends CActiveRecord
             'category' => array(self::BELONGS_TO,'Category','id')
         );
     }
+
+    public static function model($className=__CLASS__)
+    {
+        return parent::model($className);
+    }
 }

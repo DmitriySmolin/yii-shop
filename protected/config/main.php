@@ -10,7 +10,7 @@ return array(
     'name' => 'Yii_shop',
     'language' => 'ru-Ru',
     'preload' => array('debug'),
-
+    'defaultController' => 'category/index',
     // autoloading model and component classes
     'import' => array(
         'application.models.*',
