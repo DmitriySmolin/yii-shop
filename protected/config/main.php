@@ -48,6 +48,8 @@ return array(
         'urlManager' => array(
             'urlFormat' => 'path',
             'rules' => array(
+                // ЧПУ для пагинации
+                'category/<id:\d+>/page/<page:\d+>' => 'category/view',
                 'category/<id:\d+>' => 'category/view'
             ),
             'showScriptName' => false

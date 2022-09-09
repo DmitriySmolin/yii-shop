@@ -47,7 +47,7 @@
 
             <div class="col-sm-9 padding-right">
                 <div class="features_items"><!--features_items-->
-                    <h2 class="title text-center"><?=$category->name?></h2>
+                    <h2 class="title text-center"><?= $category->name ?></h2>
                     <?php if (!empty($products)): ?>
                         <?php $i = 0;
                         foreach ($products as $product): ?>
@@ -82,15 +82,17 @@
                             <?php endif; ?>
                         <?php endforeach; ?>
                         <div class="row"></div>
+
+                        <!-- Виджет для отображения пагинации-->
+                        <ul class="pagination">
+                            <?php $this->widget('CLinkPager', array(
+                                'pages' => $pages,
+                            )) ?>
+                        </ul>
+
                     <?php else : ?>
                         <h2>Здесь товаров пока нет...</h2>
                     <?php endif; ?>
-                    <ul class="pagination">
-                        <li class="active"><a href="">1</a></li>
-                        <li><a href="">2</a></li>
-                        <li><a href="">3</a></li>
-                        <li><a href="">&raquo;</a></li>
-                    </ul>
                 </div><!--features_items-->
             </div>
         </div>
