@@ -47,7 +47,7 @@
 
             <div class="col-sm-9 padding-right">
                 <div class="features_items"><!--features_items-->
-                    <h2 class="title text-center">Features Items</h2>
+                    <h2 class="title text-center"><?=$category->name?></h2>
                     <?php if (!empty($products)): ?>
                         <?php $i = 0;
                         foreach ($products as $product): ?>
@@ -55,7 +55,7 @@
                                 <div class="product-image-wrapper">
                                     <div class="single-products">
                                         <div class="productinfo text-center">
-                                            <?php echo CHtml::image(Yii::app()->request->baseUrl . "/images/products/$product->img", ''); ?>
+                                            <?php echo CHtml::image(Yii::app()->request->baseUrl . "/images/products/$product->img", 'E-SHOPPER'); ?>
                                             <h2>$<?= $product->price ?></h2>
                                             <p><?= $product->name ?></p>
                                             <a href="#" class="btn btn-default add-to-cart"><i

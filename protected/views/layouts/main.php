@@ -13,7 +13,7 @@
     <!--<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/print.css">-->
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/responsive.css">
     <!--<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/screen.css">-->
-    <title><?php echo CHtml::encode($this->pageTitle); ?></title>
+    <title><?php echo CHtml::encode($this->title); ?></title>
 </head><!--/head-->
 <body>
 <header id="header"><!--header-->
@@ -48,7 +48,9 @@
             <div class="row">
                 <div class="col-sm-4">
                     <div class="logo pull-left">
-                        <a href="index.html"><img src="images/home/logo.png" alt=""/></a>
+                        <a href="<?=Yii::app()->homeUrl?>">
+                            <?php echo CHtml::image(Yii::app()->request->baseUrl . "/images/home/logo.png", ''); ?>
+                        </a>
                     </div>
                     <div class="btn-group pull-right">
                         <div class="btn-group">
@@ -296,7 +298,6 @@
     </div>
 
 </footer><!--/Footer-->
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/respond.min.js"></script>
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/html5shiv.js"></script>
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.js"></script>
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap.min.js"></script>

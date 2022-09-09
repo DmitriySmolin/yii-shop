@@ -10,6 +10,7 @@ class CategoryController extends AppContoller
         $criteria->limit = 6;
         $hits = Product::model()->findAll($criteria);
 //        debug($hits);
+        $this->setMeta('E-SHOPPER');
         $this->render('index', compact('hits'));
     }
 
@@ -20,6 +21,8 @@ class CategoryController extends AppContoller
         $criteria->condition = "category_id = $id";
         $products = Product::model()->findAll($criteria);
 //        debug($products);
-        $this->render('view',compact('products'));
+        $category = Category::model()->findByPk($id);
+        $this->setMeta('E-SHOPPER | ' . $category->name, $category->keywords, $category->description);
+        $this->render('view', compact('products', 'category'));
     }
 }
