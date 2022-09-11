@@ -15,6 +15,7 @@ return array(
     'import' => array(
         'application.models.*',
         'application.components.*',
+        'application.controllers.*',
     ),
 
     'modules' => array(
@@ -50,7 +51,8 @@ return array(
             'rules' => array(
                 // ЧПУ для пагинации
                 'category/<id:\d+>/page/<page:\d+>' => 'category/view',
-                'category/<id:\d+>' => 'category/view'
+                'category/<id:\d+>' => 'category/view',
+                'product/<id:\d+>' => 'product/view'
             ),
             'showScriptName' => false
         ),

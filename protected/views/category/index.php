@@ -225,7 +225,7 @@
                                         <div class="productinfo text-center">
                                             <?php echo CHtml::image(Yii::app()->request->baseUrl."/images/products/$hit->img",$hit->name); ?>
                                             <h2>$<?=$hit->price?></h2>
-                                            <p><?=$hit->name?></p>
+                                            <p><a href="<?=Yii::app()->createUrl('product/view',['id' => $hit->id])?>"><?=$hit->name?></a></p>
                                             <a href="#" class="btn btn-default add-to-cart"><i
                                                         class="fa fa-shopping-cart"></i>Add to cart</a>
                                         </div>

@@ -1,5 +1,4 @@
 <?php
-require_once 'AppContoller.php';
 
 class CategoryController extends AppContoller
 {

@@ -57,7 +57,11 @@
                                         <div class="productinfo text-center">
                                             <?php echo CHtml::image(Yii::app()->request->baseUrl . "/images/products/$product->img", 'E-SHOPPER'); ?>
                                             <h2>$<?= $product->price ?></h2>
-                                            <p><?= $product->name ?></p>
+                                            <p>
+                                                <a href="<?= Yii::app()->createUrl('product/view', ['id' => $product->id]) ?>">
+                                                    <?= $product->name ?>
+                                                </a>
+                                            </p>
                                             <a href="#" class="btn btn-default add-to-cart"><i
                                                         class="fa fa-shopping-cart"></i>Add to cart</a>
                                         </div>
