@@ -1,8 +1,8 @@
 <?php
 
-class BookController extends Controller {
+//class BookController extends Controller {
 
-    public function actionIndex() {
+//    public function actionIndex() {
        
 //        $model = new Book(); // создание экземпляра модели Book
         
@@ -49,14 +49,14 @@ class BookController extends Controller {
             //Получаем книгу по заданным атрибутам, если передан массив в атрибуте, возвращает первый попавшийся элемент
 //            $a = Book::model()->findByAttributes(array('id'=>array(4,5,6),'title'=>'Война и мир'));
 //            echo $a->title;
-    }
+//    }
     
        //6.<--findAllByAttributes-->
             //Получаем книгу по заданным атрибутам, если передан массив в атрибуте, возвращает первый попавшийся элемент
-            $a = Book::model()->findAllByAttributes(array('id'=>array(4,5,6),'title'=>'Война и мир'));
+//            $a = Book::model()->findAllByAttributes(array('id'=>array(4,5,6),'title'=>'Война и мир'));
             
         
-    }
+//    }
     
     /**
      * Поиск
@@ -83,4 +83,4 @@ class BookController extends Controller {
      
      */
 
-}
+//}

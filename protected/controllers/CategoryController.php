@@ -17,6 +17,10 @@ class CategoryController extends AppContoller
     {
         $id = Yii::app()->request->getQuery('id');
 
+        $category = Category::model()->findByPk($id);
+        if (empty($category))
+            throw new CHttpException(404, 'Такой категории нет');
+
         $criteria = new CDbCriteria();
         $criteria->condition = "category_id = $id";
 
@@ -29,7 +33,7 @@ class CategoryController extends AppContoller
         $pages->applyLimit($criteria);
         $products = Product::model()->findAll($criteria);
 
-        $category = Category::model()->findByPk($id);
+
         $this->setMeta('E-SHOPPER | ' . $category->name, $category->keywords, $category->description);
         $this->render('view', compact('products', 'pages', 'category'));
 
