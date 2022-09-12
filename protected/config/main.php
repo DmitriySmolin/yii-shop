@@ -52,7 +52,10 @@ return array(
                 // ЧПУ для пагинации
                 'category/<id:\d+>/page/<page:\d+>' => 'category/view',
                 'category/<id:\d+>' => 'category/view',
-                'product/<id:\d+>' => 'product/view'
+                'product/<id:\d+>' => 'product/view',
+//                'search/<q:\w+>/page/<page:\d+>' => 'category/search',
+//                'search/<q:\w+>' => 'category/search',
+                'search' => 'category/search'
             ),
             'showScriptName' => false
         ),

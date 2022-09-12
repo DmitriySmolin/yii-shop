@@ -15,7 +15,7 @@ class CategoryController extends AppContoller
 
     public function actionView($id)
     {
-        $id = Yii::app()->request->getQuery('id');
+//        $id = Yii::app()->request->getQuery('id');
 
         $category = Category::model()->findByPk($id);
         if (empty($category))
@@ -38,6 +38,32 @@ class CategoryController extends AppContoller
         $this->render('view', compact('products', 'pages', 'category'));
 
         //        debug($products);
+
+    }
+
+    //Реализация поиска
+    public function actionSearch()
+    {
+       $q = trim(Yii::app()->request->getQuery('q'));
+        $this->setMeta('E-SHOPPER | Поиск:' . $q);
+        if (!q)
+           $this->render('search');
+
+        $criteria = new CDbCriteria();
+
+        $criteria->condition = 'name LIKE :q';
+        $criteria->params = array(':q' => "%$q%");
+
+
+        //Добавление пагинации на страницу с товарами
+        $count = Product::model()->count($criteria);
+        $pages = new CPagination($count);
+        $pages->pageSize = 3;
+        $pages->applyLimit($criteria);
+        $products = Product::model()->findAll($criteria);
+
+        $this->render('search', compact('products', 'pages', 'q'));
+
 
     }
 }
